@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Получить информацию о погоде</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+</head>
+<body>
+    <div class="weather-app">
+        {% if recent_city %}
+        <div class="weather-card">
+            <h2>Погода в городе {{recent_city}}</h2>
+            <div class="weather-main">
+                <span class="temperature">{{temperature}}°C</span>
+                <span class="weather-description">
+                    {{description}} {{emoji}}
+                </span>
+            </div>
+            <div class="weather-meta">
+                <p><i class="fas fa-clock"></i> Обновлено: {{date}} {{time}}</p>
+                <p><i class="fas fa-sync-alt"></i> Обновляется каждые {{interval}} минут</p>
+            </div>
+        </div>
+        {% else %}
+        <div class="weather-card empty-state">
+            <p>Нет данных по вашему последнему запросу</p>
+        </div>
+        {% endif %}
+
+        <form class="city-form" method="post" action="/">
+            <h1>Узнать погоду</h1>
+            <div class="form-group">
+                <input type="text" placeholder="Введите название города" name="city" required>
+                <button type="submit">Показать погоду</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

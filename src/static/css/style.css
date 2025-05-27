@@ -1,0 +1,140 @@
+/* Базовые стили */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --text-color: #333;
+    --light-text: #7f8c8d;
+    --bg-color: #f5f7fa;
+    --card-bg: #ffffff;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-app {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Карточка погоды */
+.weather-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.weather-card h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.weather-main {
+    margin: 20px 0;
+}
+
+.temperature {
+    font-size: 3rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.weather-description {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+.weather-meta {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+.weather-meta i {
+    margin-right: 5px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 30px;
+}
+
+/* Форма */
+.city-form {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+}
+
+.city-form h1 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.city-form input {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    margin-bottom: 15px;
+    transition: border 0.3s ease;
+}
+
+.city-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.city-form button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.city-form button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    .weather-card, .city-form {
+        padding: 20px;
+    }
+
+    .temperature {
+        font-size: 2.5rem;
+    }
+}
