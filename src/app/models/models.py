@@ -15,5 +15,4 @@ class HistoryResponse(BaseModel):
     city: str
     count: int
 
-class StatsResponse(BaseModel):
-    stats: list[HistoryResponse]
+
